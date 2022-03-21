@@ -1,4 +1,7 @@
 
+# NOTES
+this is fork from https://github.com/skunight/nestjs-redis and upgrade to nestjs 8
+
 # Nestjs Redis
 
 Redis component for NestJs.
