@@ -1,6 +1,10 @@
 
 # NOTES
-this is fork from https://github.com/skunight/nestjs-redis and upgrade to nestjs 8
+this is fork from https://github.com/skunight/nestjs-redis and upgrade to nestjs 8/9/10
+
+This module has added RedisLockService by using 'redlock' to make use of redis distributed lock
+
+module registration had a backwards compatibility of RedisModule.register(options) (RedisModuleOptions) or RedisModule.registerAsync(options) (RedisModuleAsyncOptions) which register default setting of RedisLockService, if you would like to change the lockSetting, please use RedisRegisterOptions or RedisRegisterAsyncOptions on module registration
 
 # Nestjs Redis
 

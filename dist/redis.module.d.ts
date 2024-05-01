@@ -1,6 +1,18 @@
 import { DynamicModule } from '@nestjs/common';
 import { RedisModuleAsyncOptions, RedisModuleOptions } from './redis.interface';
+import { LockSettings } from './lock.interface';
+export declare type RedisRegisterOptions = {
+    redisOptions: RedisModuleOptions | RedisModuleOptions[];
+    lockSettings?: LockSettings;
+};
+export declare type RedisRegisterAsyncOptions = {
+    redisOptions: RedisModuleAsyncOptions;
+    lockSettings?: LockSettings;
+};
 export declare class RedisModule {
-    static register(options: RedisModuleOptions | RedisModuleOptions[]): DynamicModule;
-    static forRootAsync(options: RedisModuleAsyncOptions): DynamicModule;
+    static register(options: RedisRegisterOptions | RedisModuleOptions | RedisModuleOptions[]): DynamicModule;
+    static forRootAsync(options: RedisModuleAsyncOptions | RedisRegisterAsyncOptions): DynamicModule;
+    private static createDefaultLockService;
+    private static isRegisterOptions;
+    private static isRegisterAsyncOptions;
 }
