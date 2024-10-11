@@ -49,4 +49,18 @@ export class RedisLockService implements OnApplicationShutdown {
       }
     }
   }
+
+  public async withLock<T = any>(name: string, runWithLock: () => Promise<T>, expiryMs = 60000): Promise<T> {
+    await this.acquireLock(name, expiryMs);
+    try {
+      return await runWithLock();
+    } 
+    catch(error) {
+      throw error;
+    }
+    finally {
+      await this.releaseLock(name);
+    } 
+  }
+
 }

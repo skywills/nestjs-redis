@@ -54,6 +54,18 @@ let RedisLockService = RedisLockService_1 = class RedisLockService {
             }
         }
     }
+    async withLock(name, runWithLock, expiryMs = 60000) {
+        await this.acquireLock(name, expiryMs);
+        try {
+            return await runWithLock();
+        }
+        catch (error) {
+            throw error;
+        }
+        finally {
+            await this.releaseLock(name);
+        }
+    }
 };
 RedisLockService = RedisLockService_1 = __decorate([
     (0, common_1.Injectable)(),

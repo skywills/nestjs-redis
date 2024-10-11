@@ -11,4 +11,5 @@ export declare class RedisLockService implements OnApplicationShutdown {
     onApplicationShutdown(signal?: string): Promise<void>;
     acquireLock(name: string, expiryMs?: number): Promise<void>;
     releaseLock(name: string): Promise<void>;
+    withLock<T = any>(name: string, runWithLock: () => Promise<T>, expiryMs?: number): Promise<T>;
 }
