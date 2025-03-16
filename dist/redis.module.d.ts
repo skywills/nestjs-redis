@@ -1,11 +1,11 @@
 import { DynamicModule } from '@nestjs/common';
 import { RedisModuleAsyncOptions, RedisModuleOptions } from './redis.interface';
 import { LockSettings } from './lock.interface';
-export declare type RedisRegisterOptions = {
+export type RedisRegisterOptions = {
     redisOptions: RedisModuleOptions | RedisModuleOptions[];
     lockSettings?: LockSettings;
 };
-export declare type RedisRegisterAsyncOptions = {
+export type RedisRegisterAsyncOptions = {
     redisOptions: RedisModuleAsyncOptions;
     lockSettings?: LockSettings;
 };

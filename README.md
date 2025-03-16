@@ -1,6 +1,6 @@
 
 # NOTES
-this is fork from https://github.com/skunight/nestjs-redis and upgrade to nestjs 8/9/10
+this is fork from https://github.com/skunight/nestjs-redis and upgrade to nestjs 8/9/10/11
 
 This module has added RedisLockService by using 'redlock' to make use of redis distributed lock
 
@@ -15,12 +15,12 @@ Redis component for NestJs.
 
 **Yarn**
 ```bash
-yarn add nestjs-redis
+yarn add @nathapp/nestjs-redis
 ```
 
 **NPM**
 ```bash
-npm install nestjs-redis --save
+npm install @nathapp/nestjs-redis --save
 ```
 
 ### Getting Started
@@ -28,7 +28,7 @@ Let's register the RedisModule in `app.module.ts`
 
 ```typescript
 import { Module } from '@nestjs/common'
-import { RedisModule} from 'nestjs-redis'
+import { RedisModule} from '@nathapp/nestjs-redis'
 
 @Module({
     imports: [
@@ -39,7 +39,7 @@ export class AppModule {}
 ```
 With Async
 ```typescript
-import { Module } from '@nestjs/common';
+import { Module } from '@nathapp/nestjs-redis';
 import { RedisModule} from 'nestjs-redis'
 
 @Module({
